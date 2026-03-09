@@ -25,7 +25,7 @@ required_vars=(
   VPS_HOST
   VPS_USER
   VPS_PORT
-  VPS_INFRA_DIR
+  VPS_APPS_DIR
   SERVICE_NAME
 )
 
@@ -61,7 +61,7 @@ set_secret "GHCR_TOKEN" "$GHCR_TOKEN"
 set_secret "VPS_HOST" "$VPS_HOST"
 set_secret "VPS_USER" "$VPS_USER"
 set_secret "VPS_PORT" "$VPS_PORT"
-set_secret "VPS_INFRA_DIR" "$VPS_INFRA_DIR"
+set_secret "VPS_APPS_DIR" "$VPS_APPS_DIR"
 set_secret "SERVICE_NAME" "$SERVICE_NAME"
 gh secret set "VPS_SSH_KEY" -b "$(cat "$KEY_PATH")" -R "$REPO" >/dev/null
 echo "Set VPS_SSH_KEY"

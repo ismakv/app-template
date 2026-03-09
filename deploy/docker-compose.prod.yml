@@ -1,0 +1,11 @@
+services:
+  web:
+    image: ${FRONTEND_IMAGE}:${IMAGE_TAG}
+    container_name: example-app-web
+    restart: unless-stopped
+    networks:
+      - edge
+
+networks:
+  edge:
+    external: true

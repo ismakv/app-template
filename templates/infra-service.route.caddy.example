@@ -1,0 +1,3 @@
+{$SERVICE_DOMAIN:example-app.example.com} {
+  reverse_proxy http://example-app-web:80
+}

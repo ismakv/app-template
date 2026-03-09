@@ -1,0 +1,19 @@
+x-backend-env: &backend-env
+  APP_ENV: ${APP_ENV:-production}
+
+services:
+  backend:
+    image: ${BACKEND_IMAGE}:${IMAGE_TAG}
+    restart: unless-stopped
+    networks:
+      - edge
+
+  frontend:
+    image: ${FRONTEND_IMAGE}:${IMAGE_TAG}
+    restart: unless-stopped
+    networks:
+      - edge
+
+networks:
+  edge:
+    external: true
